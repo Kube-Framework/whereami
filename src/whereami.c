@@ -210,7 +210,7 @@ int WAI_PREFIX(getExecutablePath)(char* out, int capacity, int* dirname_length)
     length = (int)strlen(resolved);
     if (length <= capacity)
     {
-      memcpy(out, resolved, length);
+      memcpy(out, resolved, (size_t)length);
 
       if (dirname_length)
       {
@@ -335,7 +335,7 @@ int WAI_PREFIX(getModulePath)(char* out, int capacity, int* dirname_length)
 #endif
           if (length <= capacity)
           {
-            memcpy(out, resolved, length);
+            memcpy(out, resolved, (size_t)length);
 
             if (dirname_length)
             {
